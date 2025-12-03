@@ -36,17 +36,17 @@ gcc eshop_ipc.c -o eshop_ipc
 🧱 IPC Design
 For each customer i we create two pipes:
 
-customer_to_shop[i][2]
+-customer_to_shop[i][2]
 
-child writes product index → fd[1]
+-child writes product index → fd[1]
 
-parent reads product index ← fd[0]
+-parent reads product index ← fd[0]
 
-shop_to_customer[i][2]
+-shop_to_customer[i][2]
 
-parent writes response (success + cost) → fd[1]
+-parent writes response (success + cost) → fd[1]
 
-child reads response ← fd[0]
+-child reads response ← fd[0]
 
 This keeps the communication clean and directional, and isolates each customer's traffic.
 
@@ -69,13 +69,13 @@ Product catalog[NUM_PRODUCTS];
 The shop updates this catalog whenever an order is processed.
 
 🎓 Concepts Demonstrated
-fork() and process creation
+-fork() and process creation
 
-One-way and two-way communication with pipe()
+-One-way and two-way communication with pipe()
 
-Blocking read() / write() semantics
+-Blocking read() / write() semantics
 
-Basic synchronization via pipes (request/response pattern)
+-Basic synchronization via pipes (request/response pattern)
 
 Randomized load via rand()
 
